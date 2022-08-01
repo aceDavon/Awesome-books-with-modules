@@ -34,10 +34,11 @@ function saveCollection() {
 }
 
 // Creates a Book
-function createBook(title, author) {
-  //Simply push this after intializing
-  const id = bookCollection.length + 1;
-  bookCollection.push({ id, title, author });
+function createBook(id, title, author) {
+  this.id = id;
+  this.title = title;
+  this.author = author;
+  bookCollection.push(this);
   saveCollection();
 }
 
@@ -80,11 +81,12 @@ function renderBooks(collection) {
 function addBook() {
   const bookTitle = document.getElementById('title');
   const { value: title } = bookTitle;
+  const id = bookCollection.length + 1;
 
   const bookAuthor = document.getElementById('author');
   const { value: author } = bookAuthor;
 
-  createBook(title, author); //constructor pass the ID
+  new createBook(id, title, author);
   renderBooks(bookCollection);
   bookTitle.value = '';
   bookAuthor.value = '';
