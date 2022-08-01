@@ -1,44 +1,30 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Awesome Books
 
-> Description the project.
+![book-logo](https://user-images.githubusercontent.com/84629565/182137025-2407fe77-369d-42c2-a737-6c1728426eec.jpg)
+
+> This educational project for Microverse Module 2 involves creating a straightforward website that shows a list of books and lets you add and remove books from that list. The intention is to use modules and learn ES6 syntax to make it more orderly. built with JavaScript, CSS and HTML.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML, CSS, JavaScript
+- WebHint, Stylelint, ESLint linters 
+- Git, GitHub
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
-
-
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+Not yet :smile:
 
 ## Authors
+
+👤 **Makoji David**
+
+- GitHub: [@aceDavon](https://github.com/acedavon)
+- Twitter: [@sharkleshevon](https://twitter.com/sharkleshevon)
+- LinkedIn: [Makoji David](https://www.linkedin.com/in/david-makoji-b6090971/)
+
 
 👤 **Michael Mesfin**
 
@@ -46,11 +32,6 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@MikeDuke21](https://twitter.com/MikeDuke21)
 - LinkedIn: [MICHAEL MESFIN](https://linkedin.com/in/https://www.linkedin.com/in/michael-21-duke/)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 
 ## 🤝 Contributing
@@ -65,7 +46,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
+- [Microverse](https://microverse.org)
 - Inspiration
 - etc
 
