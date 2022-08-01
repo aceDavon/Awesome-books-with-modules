@@ -38,7 +38,11 @@ function CreateBook(id, title, author) {
   this.id = id;
   this.title = title;
   this.author = author;
-  bookCollection.push(this);
+}
+
+// Load Book to Collection and Persist to localStorage.
+function loadBook(book) {
+  bookCollection.push(book);
   saveCollection();
 }
 
@@ -86,8 +90,8 @@ function addBook() {
   const bookAuthor = document.getElementById('author');
   const { value: author } = bookAuthor;
 
-  const newBook = new CreateBook();
-  newBook(id, title, author);
+  const newBook = new CreateBook(id, title, author);
+  loadBook(newBook);
   renderBooks(bookCollection);
 
   bookTitle.value = '';
