@@ -8,7 +8,7 @@ let messageOn = false;
 function renderEmptyMessage() {
   messageOn = true;
   const bookList = document.querySelector('.books-display');
-  bookList.innerHTML='';
+  bookList.innerHTML = '';
   const message = document.createElement('span');
   message.innerText = 'Your book collection is empty. Kindly add your favorite books.';
 
@@ -34,7 +34,7 @@ function saveCollection() {
 }
 
 // Creates a Book
-function createBook(id, title, author) {
+function CreateBook(id, title, author) {
   this.id = id;
   this.title = title;
   this.author = author;
@@ -86,8 +86,10 @@ function addBook() {
   const bookAuthor = document.getElementById('author');
   const { value: author } = bookAuthor;
 
-  new createBook(id, title, author);
+  const newBook = new CreateBook();
+  newBook(id, title, author);
   renderBooks(bookCollection);
+
   bookTitle.value = '';
   bookAuthor.value = '';
 }
