@@ -1,0 +1,60 @@
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  transition-duration: 0.25s;
+}
+
+header {
+  padding: 1rem;
+}
+
+.books-display,
+.books-action {
+  padding: 0 1rem 1rem 1rem;
+  max-width: 500px;
+}
+
+input {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0 0.25rem;
+}
+
+h2.dummy-heading {
+  font-size: 0;
+  visibility: hidden;
+}
+
+.books-display span {
+  font-style: italic;
+}
+
+.book-container {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid lightgray;
+}
+
+.book-container h3,
+.book-author {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.book-container .book-title {
+  font-weight: bold;
+}
+
+.primary-btn {
+  cursor: pointer;
+}
