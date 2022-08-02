@@ -78,7 +78,6 @@ class BookAction {
   static addBook() {
     const bookTitle = document.getElementById('title');
     const { value: title } = bookTitle;
-    console.log(bookCollection);
     const id = bookCollection.length + 1;
 
     const bookAuthor = document.getElementById('author');
@@ -151,6 +150,6 @@ class BookAction {
 const savedCollection = JSON.parse(localStorage.getItem('books'));
 bookCollection = savedCollection ?? DynamicBook.renderEmptyMessage();
 DynamicBook.isCollectionEmpty();
-console.log(savedCollection, bookCollection, messageOn);
-console.log(bookCollection);
 if (!messageOn) BookAction.renderBooks(bookCollection);
+const addBtn = document.querySelector('.add-btn');
+addBtn.onclick = () => BookAction.addBook();
