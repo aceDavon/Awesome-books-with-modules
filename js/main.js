@@ -1,4 +1,3 @@
-//let bookCollection = [];
 let messageOn = false;
 class BooksCollection {
   constructor() {
@@ -14,11 +13,6 @@ class BooksCollection {
   static saveCollection(collection) {
     localStorage.setItem('books', JSON.stringify(collection));
   }
-
-  static loadBook(book, collection) {
-    bookCollection.push(book);
-    this.saveCollection(collection);
-  }
 }
 
 let bookCollection = new BooksCollection();
@@ -30,9 +24,14 @@ class CreateBook {
     this.title = title;
     this.author = author;
   }
+
+  static loadBook(book, collection) {
+    bookCollection.push(book);
+    BooksCollection.saveCollection(collection);
+  }
 }
 
-//  view
+//  View
 class DynamicBook {
   static renderEmptyMessage() {
     messageOn = true;
@@ -41,9 +40,8 @@ class DynamicBook {
     bookInfoContainer.classList.add('p-4');
 
     const message = document.createElement('span');
-    message.innerText =
-      'Your book collection is empty. Kindly add your favorite books.';
-    message.className = 'empty-message';
+    message.innerText = 'Your book collection is empty. Kindly add your favorite books.';
+    message.className = 'empty-message italic';
 
     const smileyFace = document.createElement('span');
     smileyFace.innerText = '😄';
@@ -59,10 +57,10 @@ class DynamicBook {
 
     const sectionTitle = document.createElement('h2');
     sectionTitle.innerText = 'All awesome books';
-    sectionTitle.className = 'text-slate-50 text-center';
+    sectionTitle.className = 'text-slate-50 text-center self-center font-bold text-3xl';
 
     const bookInfoContainer = document.createElement('div');
-    bookInfoContainer.className = 'book-info-container';
+    bookInfoContainer.className = 'book-info-container bg-blue-100 pb-1 max-h-52 overflow-y-scroll rounded border-0 shadow-lg shadow-slate-500/50';
     bookDisplay.append(sectionTitle, bookInfoContainer);
 
     return bookDisplay;
@@ -84,7 +82,7 @@ class BookAction {
     const { value: author } = bookAuthor;
 
     const newBook = new CreateBook(id, title, author);
-    BooksCollection.loadBook(newBook, bookCollection);
+    CreateBook.loadBook(newBook, bookCollection);
     this.renderBooks(bookCollection);
 
     bookTitle.value = '';
@@ -108,7 +106,7 @@ class BookAction {
 
       const bookAuthor = document.createElement('span');
       bookAuthor.innerText = ` by ${author}`;
-      bookAuthor.className = 'book-author';
+      bookAuthor.className = 'book-author italic';
 
       const bookInfo = document.createElement('h3');
       bookInfo.className = 'book-info ml-2';
@@ -121,8 +119,7 @@ class BookAction {
       remove`;
       removeBtn.setAttribute('data-mdb-ripple', 'true');
       removeBtn.setAttribute('data-mdb-ripple-color', 'light');
-      removeBtn.classList =
-        'primary-btn del-btn flex flex-row px-2 pt-1 mr-2 pb-0.5 inline-block rounded text-red-500 leading-normal capitalize border border-red-300 shadow-md hover:bg-red-500 hover:text-white hover:shadow-lg hover:shadow-red-500/50 active:bg-red-700 active:shadow-lg transition duration-150 ease-in-out w-fit h-fit';
+      removeBtn.classList = 'primary-btn del-btn flex flex-row px-2 pt-1 mr-2 pb-0.5 inline-block rounded text-red-500 leading-normal capitalize border border-red-300 shadow-md hover:bg-red-500 hover:text-white hover:shadow-lg hover:shadow-red-500/50 active:bg-red-700 active:shadow-lg transition duration-150 ease-in-out w-fit h-fit';
       removeBtn.onclick = () => BookAction.onDelete(id);
       removeBtn.addEventListener('mouseover', () => {
         bookInfo.classList.add('line-through');
