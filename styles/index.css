@@ -12,41 +12,25 @@ html {
   transition-duration: 0.25s;
 }
 
-header {
-  padding: 1rem;
-}
-
-.books-display,
-.books-action {
-  padding: 0 1rem 1rem 1rem;
-  max-width: 500px;
-}
-
-input {
-  display: block;
-  margin-bottom: 1rem;
-}
-
-button {
-  padding: 0 0.25rem;
-}
-
-h2.dummy-heading {
+.dummy-heading {
   font-size: 0;
   visibility: hidden;
 }
 
-.books-display span {
-  font-style: italic;
-}
-
+/* Book container */
 .book-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.5rem 0;
   border-bottom: 1px solid lightgray;
 }
 
-.book-container h3,
-.book-author {
+.book-container:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.book-container h3 span {
   font-size: 1rem;
   font-weight: normal;
 }
@@ -55,6 +39,38 @@ h2.dummy-heading {
   font-weight: bold;
 }
 
+.book-container .del-btn svg {
+  transition: stroke 100ms;
+}
+
+.book-container .del-btn:hover svg {
+  stroke: #fff;
+}
+
 .primary-btn {
   cursor: pointer;
+}
+
+/* Scrollbar section */
+::-webkit-scrollbar {
+  width: 0.5625rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #e5e5e5;
+  border-radius: 0.3125rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(
+      45deg,
+      rgba(6, 182, 212, 0.7),
+      rgba(91, 14, 214, 0.7) 100%
+    );
+  border-radius: 0.3125rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(120 113 108);
 }
