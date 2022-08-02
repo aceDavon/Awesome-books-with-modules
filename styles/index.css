@@ -12,41 +12,87 @@ html {
   transition-duration: 0.25s;
 }
 
-header {
-  padding: 1rem;
+main {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
 }
 
 .books-display,
 .books-action {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
   padding: 0 1rem 1rem 1rem;
-  max-width: 500px;
+  margin: 0 1rem;
+  max-width: 700px;
+  width: 90%;
+  z-index: 3;
 }
 
-input {
-  display: block;
-  margin-bottom: 1rem;
+.books-display {
+  top: 10px; /* use percentage */
+  justify-self: flex-start;
+  min-width: 100px;
+  border-bottom: 5px solid aliceblue;
+}
+
+.books-display h2,
+.books-action h2 {
+  align-self: center;
+  font-weight: bold;
+  font-size: 2rem;
+
+  /* color: aliceblue; */
+}
+
+.book-info-container {
+  background-color: aliceblue;
+  padding: 0 0 1rem 0;
+  max-height: 222px;
+  overflow-y: scroll;
+  border-radius: 4px;
+  border: 1px solid #000;
+}
+
+.books-action {
+  top: 55%;
+  max-width: 500px;
 }
 
 button {
   padding: 0 0.25rem;
 }
 
-h2.dummy-heading {
+.dummy-heading {
   font-size: 0;
   visibility: hidden;
 }
 
-.books-display span {
+.books-display .empty-message,
+.book-container .book-author {
   font-style: italic;
 }
 
+/* Book container */
 .book-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.5rem 0;
   border-bottom: 1px solid lightgray;
 }
 
-.book-container h3,
-.book-author {
+.book-container:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.book-container h3 span {
   font-size: 1rem;
   font-weight: normal;
 }
@@ -55,6 +101,41 @@ h2.dummy-heading {
   font-weight: bold;
 }
 
+.book-container .del-btn svg {
+  transition: stroke 100ms;
+}
+
+.book-container .del-btn:hover svg {
+  stroke: #fff;
+}
+
 .primary-btn {
   cursor: pointer;
+}
+
+/*
+@media (max-width: 768px) {
+} */
+
+/* Scrollbar section */
+::-webkit-scrollbar {
+  width: 0.5625rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #e5e5e5;
+  border-radius: 0.3125rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    45deg,
+    rgba(6, 182, 212, 0.7),
+    rgba(91, 14, 214, 0.7) 100%
+  );
+  border-radius: 0.3125rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(120 113 108);
 }
