@@ -7,12 +7,24 @@
     <title>Awesome Books | Davon & Michael</title>
     <!-- CSS needed for fonts used by Tailwind -->
     <link rel="stylesheet" type="text/css" href="styles/index.css" />
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/cocogoose" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"/>
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
+    />
+
     <script src="js/main.js" defer></script>
     <!-- Script for running Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -27,8 +39,12 @@
               montserrat: ['Montserrat', 'sans-serif'],
             },
             zIndex: {
-                '1': '1',
-                '2': '2',
+              1: '1',
+              2: '2',
+              3: '3',
+            },
+            maxWidth: {
+              '2xl': '43.75rem',
             },
           },
         },
@@ -39,18 +55,22 @@
     <header class="page-title">
       <h1 class="dummy-heading">Awesome books</h1>
     </header>
-    <main>
-      <video class="min-w-full min-h-full max-w-fit object-cover" src="https://user-images.githubusercontent.com/84629565/182200473-a6535c98-cb26-46b8-aa6c-654f4e4f9d97.mp4" loop muted autoplay>
-      </video>
-      <div class="overlay absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed z-2 bg-gradient-to-r from-cyan-500/40 to-blue-500/60"></div>
-      <section class="books-display space-y-4">
+    <main class="relative overflow-hidden flex flex-col justify-center items-center w-full h-screen" >
+      <video
+        class="min-w-full min-h-full max-w-fit object-cover"
+        src="https://user-images.githubusercontent.com/84629565/182200473-a6535c98-cb26-46b8-aa6c-654f4e4f9d97.mp4"
+        loop
+        muted
+        autoplay
+      ></video>
+      <div
+        class="overlay absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed z-2 bg-gradient-to-r from-cyan-500/40 to-blue-500/60"
+      ></div>
+      <section class="books-display absolute top-2.5 flex flex-col justify-self-start max-w-24 border-b-4 border-solid border-blue-100 pt-0 pr-1 pb-1 pl-1 my-0 mx-1 max-w-2xl w-11/12 space-y-4 z-3">
         <h2 class="dummy-heading">All awesome books</h2>
       </section>
-      <section class="books-action space-y-4">
-        <h2 class="text-slate-50 text-center">Add a new book</h2>
-        <!-- <input type="text" name="title" id="title" placeholder="Title" />
-        <input type="text" name="author" id="author" placeholder="Author" /> -->
-
+      <section class="books-action absolute top-1/2 max-w-lg flex flex-col pt-0 pr-1 pb-1 pl-1 my-0 mx-1 w-11/12 space-y-4 z-3">
+        <h2 class="text-slate-50 text-center self-center font-bold text-3xl">Add a new book</h2>
         <div class="form-floating mb-3 xl:w-full">
           <input
             type="text"
@@ -69,10 +89,26 @@
           />
           <label for="author" class="text-gray-500">Author</label>
         </div>
-        <!-- <button type="submit" class="primary-btn add-btn">Add</button> -->
-        <button type="button" data-mdb-ripple="true" data-mdb-ripple-color="light" class="add-btn flex items-center gap-1 self-end hover:shadow-blue-500/50 inline-block px-6 py-2.5 bg-blue-400 text-white font-medium text-md leading-tight capitalize rounded hover:bg-blue-500 hover:shadow-lg active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out">add
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+        <button
+          type="button"
+          data-mdb-ripple="true"
+          data-mdb-ripple-color="light"
+          class="add-btn flex items-center gap-1 self-end hover:shadow-blue-500/50 inline-block px-6 py-2.5 bg-blue-400 text-white font-medium text-md leading-tight capitalize rounded hover:bg-blue-500 hover:shadow-lg active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out"
+        >
+          add
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+            />
           </svg>
         </button>
       </section>
