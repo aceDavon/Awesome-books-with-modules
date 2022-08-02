@@ -1,35 +1,4 @@
 let messageOn = false;
-class BooksCollection {
-  constructor() {
-    return [];
-  }
-
-  static isCollectionEmpty() {
-    if (this.length === 0) {
-      this.renderEmptyMessage();
-    }
-  }
-
-  static saveCollection(collection) {
-    localStorage.setItem('books', JSON.stringify(collection));
-  }
-}
-
-let bookCollection = new BooksCollection();
-
-// Controller
-class CreateBook {
-  constructor(id, title, author) {
-    this.id = id;
-    this.title = title;
-    this.author = author;
-  }
-
-  static loadBook(book, collection) {
-    bookCollection.push(book);
-    BooksCollection.saveCollection(collection);
-  }
-}
 
 //  View
 class DynamicBook {
@@ -71,8 +40,26 @@ class DynamicBook {
   }
 }
 
-// Model
-class BookAction {
+// Controller
+class CreateBook {
+  constructor(id, title, author) {
+    this.id = id;
+    this.title = title;
+    this.author = author;
+  }
+
+  static loadBook(book, collection) {
+    bookCollection.push(book);
+    BooksCollection.saveCollection(collection);
+  }
+}
+
+class BooksCollection {
+  constructor() {
+    return [];
+  }
+
+  // Model
   static addBook() {
     const bookTitle = document.getElementById('title');
     const { value: title } = bookTitle;
@@ -92,6 +79,12 @@ class BookAction {
   static removeBook(bookId) {
     bookCollection = bookCollection.filter(({ id }) => id !== bookId);
     BooksCollection.saveCollection(bookCollection);
+  }
+
+  static onDelete(bookToDelete) {
+    this.removeBook(bookToDelete);
+    this.renderBooks(bookCollection);
+    DynamicBook.isCollectionEmpty();
   }
 
   static renderBooks(collection) {
@@ -120,7 +113,7 @@ class BookAction {
       removeBtn.setAttribute('data-mdb-ripple', 'true');
       removeBtn.setAttribute('data-mdb-ripple-color', 'light');
       removeBtn.classList = 'primary-btn del-btn flex flex-row px-2 pt-1 mr-2 pb-0.5 inline-block rounded text-red-500 leading-normal capitalize border border-red-300 shadow-md hover:bg-red-500 hover:text-white hover:shadow-lg hover:shadow-red-500/50 active:bg-red-700 active:shadow-lg transition duration-150 ease-in-out w-fit h-fit';
-      removeBtn.onclick = () => BookAction.onDelete(id);
+      removeBtn.onclick = () => this.onDelete(id);
       removeBtn.addEventListener('mouseover', () => {
         bookInfo.classList.add('line-through');
       });
@@ -137,16 +130,23 @@ class BookAction {
     });
   }
 
-  static onDelete(bookToDelete) {
-    this.removeBook(bookToDelete);
-    this.renderBooks(bookCollection);
-    DynamicBook.isCollectionEmpty();
+  static isCollectionEmpty() {
+    if (this.length === 0) {
+      this.renderEmptyMessage();
+    }
+  }
+
+  static saveCollection(collection) {
+    localStorage.setItem('books', JSON.stringify(collection));
   }
 }
+
+let bookCollection = new BooksCollection();
 
 const savedCollection = JSON.parse(localStorage.getItem('books'));
 bookCollection = savedCollection ?? DynamicBook.renderEmptyMessage();
 DynamicBook.isCollectionEmpty();
-if (!messageOn) BookAction.renderBooks(bookCollection);
+
+if (!messageOn) BooksCollection.renderBooks(bookCollection);
 const addBtn = document.querySelector('.add-btn');
-addBtn.onclick = () => BookAction.addBook();
+addBtn.onclick = () => BooksCollection.addBook();
