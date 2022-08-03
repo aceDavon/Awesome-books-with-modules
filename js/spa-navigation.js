@@ -5,7 +5,8 @@ const bookAction = document.querySelector('.books-action');
 const contactSection = document.querySelector('.contact-us');
 
 navLinks.forEach((link) => {
-  link.onclick = () => {
+  link.onclick = (event) => {
+    event.preventDefault();
     if (link.classList.contains('listBook')) {
       bookList.classList.remove('hide-section');
       bookAction.classList.add('hide-section');
@@ -22,10 +23,11 @@ navLinks.forEach((link) => {
   };
 });
 
-const navAnchors = [...document.querySelectorAll('.nav-link a')];
+const navAnchors = [...navLinks];
 
 for (let i = 0; i < navAnchors.length; i += 1) {
-  navAnchors[i].addEventListener('click', () => {
+  navAnchors[i].addEventListener('click', (event) => {
+    event.preventDefault();
     const current = document.getElementsByClassName('topic-active');
     current[0].classList.remove('topic-active');
     navAnchors[i].classList.add('topic-active');
