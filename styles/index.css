@@ -89,6 +89,8 @@ header img {
 /* Navbar section */
 .nav-link a {
   position: relative;
+  transition: transform 0.25s ease-out,
+              font-weight 0s;
 }
 
 .nav-link a::after {
@@ -129,7 +131,30 @@ header img {
   display: none !important;
 }
 
-.topic-active {
+a.topic-active {
   font-weight: bold;
-  transition: transform 0.25s ease-out;
+}
+
+a.topic-active::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  transform: scaleX(0);
+  height: 0.125rem;
+  bottom: -0.625rem;
+  left: 0;
+  background-color: rgb(239, 246, 255);
+  animation: underline .75s;
+}
+
+@keyframes underline {
+  0% {
+    transform:scaleX(0);
+    transform-origin: center;
+  }
+
+  100% {
+    transform:scaleX(1);
+    transform-origin: center;
+  }
 }
