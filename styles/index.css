@@ -12,6 +12,17 @@ html {
   transition-duration: 0.25s;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+header img {
+  width: 260px;
+  border-radius: 50%;
+}
+
 .dummy-heading {
   font-size: 0;
   visibility: hidden;
@@ -73,4 +84,52 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(120 113 108);
+}
+
+/* Navbar section */
+.nav-link a {
+  position: relative;
+}
+
+.nav-link a::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  transform: scaleX(0);
+  height: 0.125rem;
+  bottom: -0.625rem;
+  left: 0;
+  background-color: rgb(239, 246, 255);
+  transition: transform 0.25s ease-out;
+}
+
+.nav-link a:hover::after {
+  transform: scaleX(1);
+  transform-origin: center;
+}
+
+.books-display,
+.books-action,
+.contact-us {
+  animation: fade-in 1s;
+  transition: display 1s ease-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.hide-section {
+  display: none !important;
+}
+
+.topic-active {
+  font-weight: bold;
+  transition: transform 0.25s ease-out;
 }

@@ -24,8 +24,14 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
     />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon/favicon-16x16.png">
+    <link rel="manifest" href="icons/favicon/site.webmanifest">
 
     <script src="js/main.js" defer></script>
+    <script src="js/spa-navigation.js" defer></script>
     <!-- Script for running Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
@@ -52,24 +58,32 @@
     </script>
   </head>
   <body>
-    <header class="page-title">
-      <h1 class="dummy-heading">Awesome books</h1>
+    <header class="header items-center z-10 absolute top-0 left-0 right-0">
+      <img src="images/book-logo.png" alt="book-logo">
+      <nav class="pr-24">
+        <ul class="navbar flex space-x-4 text-white">
+          <li class="nav-link whitespace-nowrap list"><a class="listBook topic-active" href="#BookList">Book list</a></li>
+          <li class="nav-link whitespace-nowrap newBook"><a class="addBook" href="#AddToCollection">Add new</a></li>
+          <li class="nav-link whitespace-nowrap contactForm"><a class="contact" href="#ContactUs">Contact us</a></li>
+        </ul>
+      </nav>
     </header>
-    <main class="relative overflow-hidden flex flex-col justify-center items-center w-full h-screen" >
+
+    <main class="fixed overflow-hidden flex flex-col justify-center items-center w-full h-screen" >
       <video
-        class="min-w-full min-h-full max-w-fit object-cover"
+        class="fixed top-0 min-w-full min-h-full max-w-fit object-cover"
         src="https://user-images.githubusercontent.com/84629565/182200473-a6535c98-cb26-46b8-aa6c-654f4e4f9d97.mp4"
         loop
         muted
         autoplay
       ></video>
       <div
-        class="overlay absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed z-2 bg-gradient-to-r from-cyan-500/40 to-blue-500/60"
+        class="overlay fixed top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed z-2 bg-gradient-to-r from-cyan-500/40 to-blue-500/60"
       ></div>
-      <section class="books-display absolute top-2.5 flex flex-col justify-self-start max-w-24 border-b-4 border-solid border-blue-100 pt-0 pr-1 pb-1 pl-1 my-0 mx-1 max-w-2xl w-11/12 space-y-4 z-3">
+      <section class="books-display absolute top-1/4 flex flex-col justify-self-start max-w-24 border-b-4 border-solid border-blue-100 pt-0 pr-1 pb-1 pl-1 my-0 mx-1 max-w-2xl w-11/12 space-y-4 z-3">
         <h2 class="dummy-heading">All awesome books</h2>
       </section>
-      <section class="books-action absolute top-1/2 max-w-lg flex flex-col pt-0 pr-1 pb-1 pl-1 my-0 mx-1 w-11/12 space-y-4 z-3">
+      <section class="books-action hide-section absolute top-1/4 max-w-lg flex flex-col pt-0 pr-1 pb-1 pl-1 my-0 mx-1 w-11/12 space-y-4 z-3">
         <h2 class="text-slate-50 text-center self-center font-bold text-3xl">Add a new book</h2>
         <div class="form-floating mb-3 xl:w-full">
           <input
@@ -112,6 +126,18 @@
           </svg>
         </button>
       </section>
+      <section class="contact-us hide-section absolute top-1/4 flex flex-col justify-self-start max-w-24 border-b-4 border-solid border-blue-100 pt-0 pr-1 pb-1 pl-1 my-0 mx-1 max-w-2xl w-11/12 space-y-4 z-3">
+        <h2 class="text-slate-50 text-center self-center font-bold text-3xl">Contact Us</h2>
+        <h3 class="text-slate-50  font-bold text-lg">Do you have any questions or you just want to say Hello? You can reach out to us!</h3>
+            <ul class="text-slate-50 ml-16 font-bold list-disc">
+              <li><p>Our e-mail: mail@mail.com</p></li>
+              <li><p>Our phone number: +251(929)287463 / +2347018669454</p></li>
+              <li><p>Our address: Streetname 22, 123456 City, Country</p></li>
+            </ul>
+      </section>
     </main>
+    <footer class="fixed bottom-4 text-slate-50 flex justify-start w-11/12 mx-10 py-4 px-10 z-3 bg-slate-50/50">
+      <p>Copyright &copy; All rights reserved, 2022 Makoji D. and Michael M.</p>
+    </footer>
   </body>
 </html>
