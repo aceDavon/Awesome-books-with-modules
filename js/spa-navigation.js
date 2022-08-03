@@ -21,3 +21,17 @@ navLinks.forEach((link) => {
     }
   };
 });
+
+const addActiveClass = () => {
+  const btns = [...document.querySelectorAll('.nav-link a')];
+
+  for (let i = 0; i < btns.length; i += 1) {
+    btns[i].addEventListener('click', () => {
+      const current = document.getElementsByClassName('topic-active');
+      current[0].className = current[0].className.replace(' topic-active', '');
+      this.className += ' topic-active';
+    });
+  }
+};
+
+document.addEventListener('DOMContentLoaded', addActiveClass);
