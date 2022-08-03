@@ -13,7 +13,7 @@ class DynamicBook {
     message.className = 'empty-message italic';
 
     const smileyFace = document.createElement('span');
-    smileyFace.innerText = '😄';
+    smileyFace.innerText = '😄 Go to Add new';
 
     bookInfoContainer.append(message, smileyFace);
     bookList.appendChild(bookInfoContainer);
@@ -29,7 +29,7 @@ class DynamicBook {
     sectionTitle.className = 'text-slate-50 text-center self-center font-bold text-3xl';
 
     const bookInfoContainer = document.createElement('div');
-    bookInfoContainer.className = 'book-info-container bg-blue-100 pb-1 max-h-52 overflow-y-scroll rounded border-0 shadow-lg shadow-slate-500/50';
+    bookInfoContainer.className = 'book-info-container bg-blue-100 pb-1 max-h-64 overflow-y-scroll rounded border-0 shadow-lg shadow-slate-500/50';
     bookDisplay.append(sectionTitle, bookInfoContainer);
 
     return bookDisplay;
