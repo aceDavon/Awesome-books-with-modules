@@ -128,3 +128,8 @@ header img {
 .hide-section {
   display: none !important;
 }
+
+.topic-active {
+  font-weight: bold;
+  transition: transform 0.25s ease-out;
+}
