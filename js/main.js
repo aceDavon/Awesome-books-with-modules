@@ -36,7 +36,7 @@ class BooksCollection {
     const { value: author } = bookAuthor;
 
     const newBook = new CreateBook(id, title, author);
-    bookCollection.addBook(newBook);
+    this.addBook(newBook);
     DynamicBook.renderBooks(this.library, this);
 
     bookTitle.value = '';
@@ -55,7 +55,7 @@ class BooksCollection {
 }
 
 /* Initialization */
-let bookCollection = new BooksCollection();
+const bookCollection = new BooksCollection();
 bookCollection.isCollectionEmpty();
 const { messageOn } = status;
 
