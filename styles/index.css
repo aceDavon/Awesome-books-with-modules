@@ -158,3 +158,26 @@ a.topic-active::after {
     transform-origin: center;
   }
 }
+
+.date-time::before {
+  position: absolute;
+  content: '';
+  width: 79%;
+  transform: scaleX(1);
+  height: 0.125rem;
+  top: -0.625rem;
+  left: 0;
+  background-color: rgb(239, 246, 255);
+}
+.date-time::after {
+  position: absolute;
+  content: '';
+  width: 79%;
+  transform: scaleX(1);
+  height: 0.125rem;
+  bottom: -0.625rem;
+  left: 0;
+  background-color: rgb(239, 246, 255);
+}
+
+
