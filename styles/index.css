@@ -162,7 +162,7 @@ a.topic-active::after {
 .date-time::before {
   position: absolute;
   content: '';
-  width: 79%;
+  width: 90%;
   transform: scaleX(1);
   height: 0.125rem;
   top: -0.625rem;
@@ -172,7 +172,7 @@ a.topic-active::after {
 .date-time::after {
   position: absolute;
   content: '';
-  width: 79%;
+  width: 90%;
   transform: scaleX(1);
   height: 0.125rem;
   bottom: -0.625rem;
