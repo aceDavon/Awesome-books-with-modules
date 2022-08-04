@@ -89,8 +89,9 @@ header img {
 /* Navbar section */
 .nav-link a {
   position: relative;
-  transition: transform 0.25s ease-out,
-              font-weight 0s;
+  transition:
+    transform 0.25s ease-out,
+    font-weight 0s;
 }
 
 .nav-link a::after {
@@ -144,17 +145,17 @@ a.topic-active::after {
   bottom: -0.625rem;
   left: 0;
   background-color: rgb(239, 246, 255);
-  animation: underline .75s;
+  animation: underline 0.75s;
 }
 
 @keyframes underline {
   0% {
-    transform:scaleX(0);
+    transform: scaleX(0);
     transform-origin: center;
   }
 
   100% {
-    transform:scaleX(1);
+    transform: scaleX(1);
     transform-origin: center;
   }
 }
@@ -169,6 +170,7 @@ a.topic-active::after {
   left: 0;
   background-color: rgb(239, 246, 255);
 }
+
 .date-time::after {
   position: absolute;
   content: '';
@@ -179,5 +181,3 @@ a.topic-active::after {
   left: 0;
   background-color: rgb(239, 246, 255);
 }
-
-
