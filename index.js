@@ -1,7 +1,7 @@
-import CreateBook from './create-book.js';
-import { DynamicBook, status } from './dynamic-book.js';
-import Time from './time.js';
-import { singlePageNav, toggleActiveLink } from './spa-navigation.js';
+import CreateBook from './modules/create-book.js';
+import { DynamicBook, status } from './modules/dynamic-book.js';
+import Time from './modules/time.js';
+import { singlePageNav, toggleActiveLink } from './modules/spa-navigation.js';
 
 class BooksCollection {
   constructor() {
@@ -9,24 +9,24 @@ class BooksCollection {
   }
 
   // Model
-  addBook(book) {
+  addBook = (book) => {
     this.library.push(book);
     this.saveCollection();
     DynamicBook.renderBooks(this.library, this);
   }
 
-  removeBook(bookId) {
+  removeBook = (bookId) => {
     this.library = this.library.filter(({ id }) => id !== bookId);
     this.saveCollection();
   }
 
-  onDelete(bookToDelete) {
+  onDelete = (bookToDelete) =>  {
     this.removeBook(bookToDelete);
     DynamicBook.renderBooks(this.library, this);
     this.isCollectionEmpty();
   }
 
-  getInput() {
+  getInput = () => {
     const id = this.library.length + 1;
 
     const bookTitle = document.getElementById('title');
@@ -43,13 +43,13 @@ class BooksCollection {
     bookAuthor.value = '';
   }
 
-  isCollectionEmpty() {
+  isCollectionEmpty = () => {
     if (this.library.length === 0) {
       DynamicBook.renderEmptyMessage();
     }
   }
 
-  saveCollection() {
+  saveCollection = () => {
     localStorage.setItem('books', JSON.stringify(this.library));
   }
 }
@@ -63,6 +63,7 @@ if (!messageOn) DynamicBook.renderBooks(bookCollection.library, bookCollection);
 const addBtn = document.querySelector('.add-btn');
 addBtn.onclick = () => bookCollection.getInput();
 
-setInterval(Time.displayTime, 10);
+setInterval(Time.displayTime);
 singlePageNav();
 toggleActiveLink();
+

@@ -4,7 +4,7 @@ const status = {
 
 //  View
 class DynamicBook {
-  static renderEmptyMessage() {
+  static renderEmptyMessage = () => {
     status.messageOn = true;
     const bookList = this.resetBookDisplay();
     const bookInfoContainer = bookList.querySelector('.book-info-container');
@@ -22,7 +22,7 @@ class DynamicBook {
     return this.library;
   }
 
-  static resetBookDisplay() {
+  static resetBookDisplay = () => {
     const bookDisplay = document.querySelector('.books-display');
     bookDisplay.innerHTML = '';
 
@@ -37,7 +37,7 @@ class DynamicBook {
     return bookDisplay;
   }
 
-  static renderBooks(collection, bookInstance) {
+  static renderBooks = (collection, bookInstance) => {
     const bookList = this.resetBookDisplay();
     const bookInfoContainer = bookList.querySelector('.book-info-container');
     collection.forEach((book) => {
