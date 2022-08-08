@@ -21,7 +21,7 @@
 ![screenshot](https://user-images.githubusercontent.com/84629565/182917746-4cf7884f-fd9c-445b-9f7c-4ab934f59aa4.png)
 ## Live Demo
 
-[Awesome-Books](https://michael-duke.github.io/Awesome-Books/) :point_left: Here :smile:
+[Awesome-Books](https://michael-duke.github.io/Awesome-Books/) :point_left: Here
 
 ## Dependencies
 
