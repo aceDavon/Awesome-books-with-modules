@@ -20,7 +20,7 @@ class BooksCollection {
     this.saveCollection();
   }
 
-  onDelete = (bookToDelete) =>  {
+  onDelete = (bookToDelete) => {
     this.removeBook(bookToDelete);
     DynamicBook.renderBooks(this.library, this);
     this.isCollectionEmpty();
@@ -66,4 +66,3 @@ addBtn.onclick = () => bookCollection.getInput();
 setInterval(Time.displayTime);
 singlePageNav();
 toggleActiveLink();
-

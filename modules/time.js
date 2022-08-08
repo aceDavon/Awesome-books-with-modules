@@ -1,5 +1,5 @@
 class Time {
-  static displayTime = () => {
+  static displayTime() {
     const dt = luxon.DateTime;
     const locale = navigator.language;
     const options = {
@@ -7,15 +7,11 @@ class Time {
       day: 'numeric',
       year: 'numeric',
       hour: 'numeric',
-      minute: '2-digit',
-      second: 'numeric',
-      timeZoneName: 'short',
+      minute: 'numeric',
+      hour12: 'false',
     };
-    document.querySelector('.date-time p').textContent = `${dt
-      .now()
-      .setLocale(locale)
-      .toLocaleString(options)}`;
-  };
+    document.querySelector('.date-time p').textContent = `${dt.now().setLocale(locale).toLocaleString(options)}`;
+  }
 }
 
 export default Time;
