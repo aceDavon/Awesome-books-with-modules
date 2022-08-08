@@ -1,3 +1,5 @@
+import * as luxon from './luxon.js';
+
 class Time {
   static displayTime() {
     const dt = luxon.DateTime;

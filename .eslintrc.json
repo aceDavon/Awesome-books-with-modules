@@ -12,7 +12,6 @@
   "extends": ["airbnb-base"],
   "rules": {
     "no-shadow": "off",
-    "no-undef": "off",
     "no-param-reassign": "off",
     "eol-last": "off",
     "import/extensions": [ 1, {
@@ -21,6 +20,7 @@
   },
   "ignorePatterns": [
     "dist/",
-    "build/"
+    "build/",
+    "modules/luxon.js"
   ]
 }

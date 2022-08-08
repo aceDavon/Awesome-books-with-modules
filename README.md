@@ -19,9 +19,6 @@
 ![screenshot](https://user-images.githubusercontent.com/84629565/182918002-c3dcc31f-6c20-4d69-9fd0-82fc05555237.png)
 ![screenshot](https://user-images.githubusercontent.com/84629565/182920033-c8721e0a-1ace-4d2f-81b3-eb449ac697a6.png)
 ![screenshot](https://user-images.githubusercontent.com/84629565/182917746-4cf7884f-fd9c-445b-9f7c-4ab934f59aa4.png)
-## Live Demo
-
-[Awesome-Books](https://michael-duke.github.io/Awesome-Books/) :point_left: Here
 
 ## Dependencies
 
@@ -60,9 +57,6 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - [Microverse](https://microverse.org)
-- Inspiration
-  - [Vitor Guedes Madeira](https://github.com/Vitor-Guedes-Madeira)
-  - [Virag Kormoczy](https://github.com/virag-ky)
 
 
 ## 📝 License
