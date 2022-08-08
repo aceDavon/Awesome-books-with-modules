@@ -23,6 +23,13 @@
 
 [Awesome-Books](https://michael-duke.github.io/Awesome-Books/) :point_left: Here :smile:
 
+## Dependencies
+
+### Luxon
+> Luxon is a Javascript library used to make working with date Objects easier and faster. In this project,it was loaded directly from a Content Delivery Network(CDN) and used to format the date time object on the page.
+
+***To learn more, refer to the Luxon [Official Documentation Page](https://moment.github.io/luxon/#/)***
+
 ## Authors
 
 👤 **Makoji David**
